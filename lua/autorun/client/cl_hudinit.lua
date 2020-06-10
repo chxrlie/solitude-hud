@@ -1,6 +1,7 @@
 local healthIcon = Material("ui/heart.png")
 local pointIcon = Material("ui/shop.png")
 local pingIcon = Material("ui/signal.png")
+local timerIcon = Material("ui/timer.png")
 
 hook.Add("HUDPaint", "HUDPaint_DrawHUD", function()
     local clientPlayer = LocalPlayer()
@@ -27,25 +28,30 @@ hook.Add("HUDPaint", "HUDPaint_DrawHUD", function()
 
     --Body
     surface.SetFont("DermaDefault")
-    surface.SetTextPos(136, ScrH()-97)
+    surface.SetTextPos(138, ScrH()-97)
     surface.DrawText(clientPlayer:Health())
 
-    surface.SetTextPos(136, ScrH()-82)
+    surface.SetTextPos(138, ScrH()-82)
     if clientPlayer.PS2_Wallet then
         surface.DrawText(playerWallet)
     end
 
-    surface.SetTextPos(136, ScrH()-67)
+    surface.SetTextPos(138, ScrH()-67)
     surface.DrawText(playerPing)
 
+    surface.SetTextPos(268, ScrH()-67)
+    surface.DrawText(os.date("%H:%M"))
     -- Icons
-    surface.SetDrawColor(255, 255, 255, 255)
+    surface.SetDrawColor(227, 68, 68, 255)
     surface.SetMaterial(healthIcon)
     surface.DrawTexturedRect(121, ScrH()-97, 14, 14)
+    surface.SetDrawColor(255, 255, 255, 255)
     surface.SetMaterial(pointIcon)
     surface.DrawTexturedRect(121, ScrH()-82, 14, 14)
     surface.SetMaterial(pingIcon)
     surface.DrawTexturedRect(121, ScrH()-67, 14, 14)
+    surface.SetMaterial(timerIcon)
+    surface.DrawTexturedRect(252, ScrH()-67, 14, 14)
 end)
 
 hook.Add("InitPostEntity", "AvatarHUDLoad", function()
