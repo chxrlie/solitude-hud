@@ -9,7 +9,7 @@
 
 👤 **Charlie**
 
-* Website: tps://steamcommunity.com/id/Chxrlie/)
+* Website: https://steamcommunity.com/id/Chxrlie/)
 * Github: [@Chxrlie](https://github.com/Chxrlie)
 
 ## Show your support
